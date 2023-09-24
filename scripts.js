@@ -1,20 +1,17 @@
 /****************** Exercise 1 ********************/
 
 // Use a for loop to print numbers from 1 to 10
-  
-
-
-
+for (let i = 1; i <= 10; i++) {
+    console.log("Number:", i);
+} 
 
 
 /****************** Exercise 2 ********************/
 
 // Create a for loop that logs the numbers 4 to 156 to the console.
-
-
-
-
-
+for (let i = 4; i <= 156; i++) {
+    console.log("Number:", i);
+}
 
 
 
@@ -23,21 +20,21 @@
 // Given the following array, log the sentence, "I really like the color: [COLOR]" for each of the items.
 const favoriteColors = ["red", "blue", "purple", "yellow"];
 
-
-
-
-
-
-
+for (let i = 0; i < favoriteColors.length; i++) {
+    let colors = favoriteColors[i];
+    console.log(`I really like the color: ${colors}`);
+}
 
 
 /****************** Exercise 4 ********************/
 
 // Use a for loop to calculate the sum of even numbers from 2 to 20
+let sum = 0;
 
-
-
-
+for (let i = 2; i <= 20; i += 2) {
+    sum += i;
+}
+console.log(`The sum of the even numbers is: ${sum}`);
 
 
 /****************** Exercise 5 ********************/
@@ -47,13 +44,11 @@ const inputString = "hello";
 let reversedString = "";
 // Output should be "olleh"
 
+for(let i = inputString.length - 1; i >= 0; i--){
+  reversedString += inputString[i];
+}
 
-
-
-
-
-
-
+console.log(reversedString);
 
 
 
@@ -64,12 +59,11 @@ let reversedString = "";
 const num = 5; // The number for which we want to calculate the factorial
 let factorial = 1;
 
-
 // Calculate the factorial of a number using a for loop
-
-
-
-
+for (let i = 1; i <= num; i++ ) {
+    factorial  = factorial * i;
+    console.log(factorial, `*`,  i);
+}
 
 
 
@@ -90,4 +84,10 @@ console.log(`Annual Interest Rate: ${annualInterestRate * 100}%`);
 console.log(`Number of Years: ${years}`);
 
 // Calculate the interest on an investment using a for loop
+let totalAmount = initialAmount;
 
+for(let i = 1; i <= years; i++) {
+  const interest = totalAmount * annualInterestRate;
+    totalAmount += interest;
+    console.log(`Year ${i}: $${totalAmount.toFixed(2)}`);
+}
